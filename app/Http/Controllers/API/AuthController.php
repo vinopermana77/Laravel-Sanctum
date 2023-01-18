@@ -27,7 +27,7 @@ class AuthController extends Controller
         $token = $user->createToken('auth-sanctum')->plainTextToken;
 
         return response()->json([
-            'message' => 'Success',
+            'message' => 'Register user successfully',
             'data' => $user,
             'access_token' => $token,
             'token_type' => 'Bearer'
@@ -52,7 +52,7 @@ class AuthController extends Controller
         $token = $user->createToken('auth-sanctum')->plainTextToken;
 
         return response()->json([
-            'message' => 'Success',
+            'message' => 'Login user successfully',
             'data' => $user,
             'access_token' => $token,
             'token_type' => 'Bearer'
@@ -63,7 +63,7 @@ class AuthController extends Controller
     {
         $request->user()->tokens()->delete();
         return response()->json([
-            'message' => 'Success Logout',
+            'message' => 'Logout successfully',
         ]);
     }
 }
